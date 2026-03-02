@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <title>Cotizaciones - Empleado</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <script src="../config.js"></script>
+    <script defer src="cotizaciones.js"></script>
+</head>
+
+<body>
+<div class="dashboard">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <h2><img src="../img/nodox_logo.png" class="logo-sidebar"></h2>
+
+        <a href="./empleado.html">Dashboard</a>
+        <a class="activo" href="./cotizaciones.html">Cotizaciones</a>
+        <a href="./inventario.html">Inventario</a>
+        <a href="./servicios.html">Servicios</a>
+        <a href="./ordenes.html">Órdenes Trabajo</a>
+        <a href="./mensajes.html">Mensajes</a>
+
+        <a href="../login/login.html" class="cerrar-sesion">⏻ Cerrar sesión</a>
+    </div>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <div class="main">
+
+        <div class="header">
+            <h1>Cotización</h1>
+        </div>
+
+        <!-- BUSCADOR + CANTIDAD + AGREGAR -->
+        <div class="cotizador-buscador">
+
+            <div style="position: relative; width: 260px;">
+                <input 
+                    type="text" 
+                    id="buscar-material" 
+                    placeholder="Buscar material..."
+                >
+                <div id="lista-materiales" class="lista-sugerencias"></div>
+            </div>
+
+            <input 
+                type="number" 
+                id="cantidad" 
+                min="1" 
+                value="1"
+                style="width: 80px;"
+            >
+
+            <button id="btn-agregar">Agregar</button>
+        </div>
+
+        <!-- TABLA DETALLE -->
+        <table class="tabla">
+            <thead>
+                <tr>
+                    <th>Material</th>
+                    <th>Cantidad</th>
+                    <th>Precio Unitario</th>
+                    <th>Total</th>
+                    <th>Opciones</th>
+                </tr>
+            </thead>
+            <tbody id="tabla-detalle"></tbody>
+        </table>
+
+        <!-- DESCRIPCIÓN -->
+        <div class="descripcion-box">
+            <label for="descripcion-trabajo">Descripción / Nota del trabajo:</label>
+            <textarea 
+                id="descripcion-trabajo" 
+                placeholder="Descripción o instrucciones del trabajo..."
+            ></textarea>
+        </div>
+
+        <!-- RESUMEN TOTALES -->
+        <div class="card-totales">
+
+            <p>Subtotal: $<span id="subtotal-span">0.00</span></p>
+            <p>IVA (8%): $<span id="iva-span">0.00</span></p>
+            <p class="total-final">Total: $<span id="total-span">0.00</span></p>
+
+            <label for="nota-extra">Notas extra (opcionales):</label>
+            <textarea 
+                id="nota-extra" 
+                placeholder="Notas adicionales para producción (opcional)..."
+            ></textarea>
+
+            <button id="btn-confirmar" class="btn-confirmar">
+                Confirmar Cotización
+            </button>
+        </div>
+
+    </div><!-- main -->
+
+</div><!-- dashboard -->
+</body>
+</html>

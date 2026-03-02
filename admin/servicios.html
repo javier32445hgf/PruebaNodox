@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios - NODOX</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+
+    <!-- ✅ jsPDF + AutoTable -->
+    <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jspdf-autotable@3.5.29/dist/jspdf.plugin.autotable.min.js"></script>
+</head>
+
+<body>
+<div class="dashboard">
+
+    <div class="sidebar">
+        <h2>NODOX</h2>
+        <a href="admin.html">Menu Principal</a>
+        <a href="cotizaciones.html">Cotizaciones</a>
+        <a href="inventario.html">Inventario</a>
+        <a href="ordenes.html">Órdenes Trabajo</a>
+        <a href="mensajes.html">Mensajes</a>
+        <a href="usuarios.html">Usuarios</a>
+        <a href="../login/login.html">Cerrar sesión</a>
+    </div>
+
+    <div class="main">
+
+        <div class="header" style="display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap;">
+            <h1 style="margin:0;">Servicios</h1>
+
+            <!-- ✅ NUEVO BOTÓN PDF -->
+            <div style="display:flex; gap:10px; flex-wrap:wrap;">
+                <button type="button" class="btn-actualizar" onclick="cargarServicios()">
+                    🔄 Actualizar
+                </button>
+
+                <button type="button" class="btn-actualizar" onclick="generarPDFServicios()">
+                    📄 PDF Servicios
+                </button>
+            </div>
+        </div>
+
+        <input
+            type="text"
+            id="buscador"
+            class="input-buscar"
+            placeholder="Buscar servicio..."
+            onkeyup="filtrarServicios()"
+        >
+
+        <table class="tabla">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Servicio</th>
+                    <th>Descripción</th>
+                    <th>Unidad</th>
+                    <th>Precio Base</th>
+                    <th>Opciones</th>
+                </tr>
+            </thead>
+
+            <tbody id="tablaServicios"></tbody>
+        </table>
+
+    </div>
+</div>
+
+<script src="../config.js"></script>
+<script src="servicios.js"></script>
+
+</body>
+</html>

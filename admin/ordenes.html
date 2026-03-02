@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Órdenes de Trabajo - NODOX</title>
+
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <script src="../config.js"></script>
+
+  <!-- jsPDF -->
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jspdf-autotable@3.5.29/dist/jspdf.plugin.autotable.min.js"></script>
+
+  <script defer src="ordenes.js"></script>
+</head>
+
+<body>
+
+<div class="dashboard">
+
+  <div class="sidebar">
+    <h2>NODOX</h2>
+    <a href="admin.html">Menu Principal</a>
+    <a href="cotizaciones.html">Cotizaciones</a>
+    <a href="inventario.html">Inventario</a>
+    <a href="servicios.html">Servicios</a>
+    <a href="mensajes.html">Mensajes</a>
+    <a href="usuarios.html">Usuarios</a>
+    <a href="../login/login.html">Cerrar sesión</a>
+  </div>
+
+  <div class="main">
+    <div class="header">
+      <h1>Órdenes de Trabajo</h1>
+    </div>
+
+    <table class="tabla">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Estado</th>
+          <th>Fecha</th>
+          <th>Descripción</th>
+          <th>Opciones</th>
+        </tr>
+      </thead>
+      <tbody id="tabla-ordenes"></tbody>
+    </table>
+  </div>
+
+</div>
+
+<!-- MODAL DETALLE -->
+<div id="modal-detalle" class="modal">
+  <div class="modal-contenido-2">
+    <h2>Detalle de Orden</h2>
+
+    <div id="detalle-contenido"></div>
+
+    <div class="modal-actions">
+      <button type="button" onclick="generarPDF()">📄 Generar PDF</button>
+      <button type="button" onclick="abrirEditarDesdeDetalle()">✏️ Editar</button>
+      <button type="button" onclick="enviarPorCorreo()">📩 Enviar por correo</button>
+      <button type="button" onclick="cerrarModal()">Cerrar</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL EDITAR -->
+<div id="modal-editar" class="modal">
+  <div class="modal-contenido-2">
+    <h2>Editar Orden</h2>
+
+    <div id="editar-contenido" style="overflow:auto; padding:16px 18px;">
+
+      <h3>Datos del cliente</h3>
+      <div class="ot-grid">
+        <div>
+          <label>Fecha de entrada</label>
+          <input type="date" id="edit-fecha-entrada">
+        </div>
+        <div>
+          <label>Tiempo estimado de entrega</label>
+          <input type="text" id="edit-tiempo-entrega" placeholder="Ej: 2 días / 48 horas">
+        </div>
+
+        <div>
+          <label>Cliente</label>
+          <input type="text" id="edit-cliente">
+        </div>
+        <div>
+          <label>Contacto</label>
+          <input type="text" id="edit-contacto">
+        </div>
+
+        <div>
+          <label>Mail</label>
+          <input type="email" id="edit-mail">
+        </div>
+        <div>
+          <label>Tel</label>
+          <input type="text" id="edit-tel">
+        </div>
+
+        <div>
+          <label>RFC</label>
+          <input type="text" id="edit-rfc">
+        </div>
+        <div>
+          <label>Dirección</label>
+          <textarea id="edit-direccion" style="width:100%; min-height:70px;"></textarea>
+        </div>
+      </div>
+
+      <hr class="ot-sep">
+
+      <h3>Pago</h3>
+      <div class="ot-grid">
+        <div>
+          <label>Método de pago</label>
+          <select id="edit-metodo-pago">
+            <option value="Efectivo">Efectivo</option>
+            <option value="Tarjeta">Tarjeta</option>
+            <option value="Transferencia">Transferencia</option>
+          </select>
+        </div>
+        <div>
+          <label>Anticipo</label>
+          <input type="number" id="edit-anticipo" min="0" step="0.01" value="0">
+        </div>
+      </div>
+
+      <hr class="ot-sep">
+
+      <h3>Materiales / Cotización</h3>
+
+      <div class="cotizador-buscador" style="margin-bottom:10px;">
+        <div style="position: relative; width: 260px;">
+          <input type="text" id="edit-buscar-material" placeholder="Buscar material..." autocomplete="off">
+          <div id="edit-lista-materiales" class="lista-sugerencias"></div>
+        </div>
+
+        <select id="edit-unidad" style="width:120px;">
+          <option value="pieza">Pieza</option>
+          <option value="m2">m²</option>
+          <option value="hora">Hora</option>
+        </select>
+
+        <input type="number" id="edit-cantidad" min="1" value="1" style="width:80px;">
+        <input type="number" id="edit-ancho" step="0.01" min="0" placeholder="Ancho (m)" style="width:120px;">
+        <input type="number" id="edit-alto" step="0.01" min="0" placeholder="Alto (m)" style="width:120px;">
+        <button type="button" id="btn-edit-agregar">Agregar</button>
+      </div>
+
+      <table class="tabla">
+        <thead>
+          <tr>
+            <th>Material</th>
+            <th>Unidad</th>
+            <th>Cantidad</th>
+            <th>Medida</th>
+            <th>P. Unit.</th>
+            <th>Total</th>
+            <th>Opciones</th>
+          </tr>
+        </thead>
+        <tbody id="edit-tabla-materiales"></tbody>
+      </table>
+
+      <hr class="ot-sep">
+
+      <label>Descripción / Nota del trabajo</label>
+      <textarea id="edit-descripcion" style="width:100%; min-height:80px;"></textarea>
+
+      <label>Notas extra</label>
+      <textarea id="edit-notas-extra" style="width:100%; min-height:80px;"></textarea>
+
+      <div class="card-totales" style="margin-top:12px;">
+        <label><strong>Tipo de IVA</strong></label>
+        <select id="edit-iva-tipo" style="width:220px;">
+          <option value="0.08">Cliente local (8%)</option>
+          <option value="0.15">Cliente foráneo (15%)</option>
+        </select>
+
+        <p>Subtotal: $<span id="edit-subtotal">0.00</span></p>
+        <p>IVA: $<span id="edit-iva">0.00</span></p>
+        <p class="total-final">Total: $<span id="edit-total">0.00</span></p>
+        <p><strong>Saldo:</strong> $<span id="edit-saldo">0.00</span></p>
+      </div>
+
+    </div>
+
+    <div class="modal-actions">
+      <button type="button" onclick="guardarEdicion()">💾 Guardar cambios</button>
+      <button type="button" onclick="cerrarModalEditar()">Cancelar</button>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

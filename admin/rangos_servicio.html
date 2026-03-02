@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Rangos de Precios - NODOX</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <script src="../config.js"></script>
+    <script defer src="rangos_servicio.js"></script>
+</head>
+<body>
+
+<div class="dashboard">
+
+    <div class="sidebar">
+        <h2>NODOX</h2>
+        <a href="servicios.html">← Regresar</a>
+    </div>
+
+    <div class="main">
+
+        <div class="header">
+            <h1>Rangos de Precios</h1>
+            <button class="btn-crear" onclick="abrirNuevoRango()">+ Agregar Rango</button>
+        </div>
+
+        <table class="tabla">
+            <thead>
+                <tr>
+                    <th>Mínimo</th>
+                    <th>Máximo</th>
+                    <th>Precio</th>
+                    <th>Opciones</th>
+                </tr>
+            </thead>
+
+            <tbody id="tablaRangos"></tbody>
+        </table>
+
+    </div>
+
+</div>
+
+</body>
+</html>

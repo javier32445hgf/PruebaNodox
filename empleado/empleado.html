@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <title>NODOX - Panel Empleado</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <script src="../config.js"></script>
+    <script defer src="empleado.js"></script>
+</head>
+<body>
+<div class="dashboard">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <h2><img src="../img/nodox_logo.png" class="logo-sidebar"></h2>
+
+        <a class="activo" href="./empleado.html">Dashboard</a>
+        <a href="./cotizaciones.html">Cotizaciones</a>
+        <a href="./inventario.html">Inventario</a>
+        <a href="./servicios.html">Servicios</a>
+        <a href="./ordenes.html">Órdenes Trabajo</a>
+        <a href="./mensajes.html">Mensajes</a>
+
+        <a href="../login/login.html" class="cerrar-sesion">⏻ Cerrar sesión</a>
+    </div>
+
+    <!-- MAIN -->
+    <div class="main">
+        <div class="header">
+            <h1>Panel del Empleado</h1>
+            <p>Bienvenido, aquí puedes gestionar cotizaciones y consultar la información necesaria.</p>
+        </div>
+
+        <div class="cards">
+            <a class="card" href="./cotizaciones.html">
+                <h3>📄 Cotizaciones</h3>
+                <p>Crear y administrar cotizaciones de clientes.</p>
+            </a>
+
+            <a class="card" href="./inventario.html">
+                <h3>📦 Inventario</h3>
+                <p>Consulta de materiales, existencias y precios.</p>
+            </a>
+
+            <a class="card" href="./servicios.html">
+                <h3>🛠 Servicios</h3>
+                <p>Revisa los servicios y rangos disponibles.</p>
+            </a>
+
+            <a class="card" href="./ordenes.html">
+                <h3>📑 Órdenes de Trabajo</h3>
+                <p>Consulta las órdenes generadas a partir de cotizaciones.</p>
+            </a>
+
+            <a class="card" href="./mensajes.html">
+                <h3>💬 Mensajes</h3>
+                <p>Comunícate con administrador y producción.</p>
+            </a>
+        </div>
+    </div>
+
+    <!-- Reloj abajo a la derecha -->
+    <div id="reloj-contenedor">
+        <div id="reloj-hora">--:--</div>
+        <div id="reloj-fecha">--/--/----</div>
+    </div>
+
+</div>
+</body>
+</html>

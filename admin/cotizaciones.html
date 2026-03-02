@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cotizaciones - NODOX</title>
+  <link rel="stylesheet" href="../css/dashboard.css">
+
+  <script src="../config.js"></script>
+  <script defer src="cotizaciones.js"></script>
+</head>
+
+<body>
+
+<div class="dashboard">
+
+  <div class="sidebar">
+    <h2>NODOX</h2>
+    <a href="admin.html">Menu Principal</a>
+    <a href="inventario.html">Inventario</a>
+    <a href="servicios.html">Servicios</a>
+    <a href="ordenes.html">Órdenes Trabajo</a>
+    <a href="mensajes.html">Mensajes</a>
+    <a href="usuarios.html">Usuarios</a>
+    <a href="../login/login.html">Cerrar sesión</a>
+  </div>
+
+  <div class="main">
+    <div class="header">
+      <h1>Cotización</h1>
+    </div>
+
+    <!-- DATOS CLIENTE -->
+    <div class="descripcion-box">
+      <h3>Datos para entrega / cliente</h3>
+
+      <label><strong>Fecha de entrada:</strong></label>
+      <input type="date" id="fecha-entrada">
+
+      <label><strong>Tiempo estimado de entrega:</strong></label>
+      <input type="text" id="tiempo-entrega" placeholder="Ej: 2 días / 48 horas">
+
+      <label><strong>Cliente:</strong></label>
+      <input type="text" id="cliente" placeholder="Nombre del cliente">
+
+      <label><strong>Contacto:</strong></label>
+      <input type="text" id="contacto" placeholder="Persona de contacto">
+
+      <label><strong>Mail:</strong></label>
+      <input type="email" id="mail" placeholder="correo@ejemplo.com">
+
+      <label><strong>Tel:</strong></label>
+      <input type="text" id="tel" placeholder="Teléfono">
+
+      <label><strong>RFC:</strong></label>
+      <input type="text" id="rfc" placeholder="RFC">
+
+      <label><strong>Dirección:</strong></label>
+      <textarea id="direccion" placeholder="Dirección completa..."></textarea>
+    </div>
+
+    <!-- CAPTURA DE MATERIAL -->
+    <div class="cotizador-buscador">
+
+      <div style="position: relative; width: 260px;">
+        <input type="text" id="buscar-material" placeholder="Buscar material..." autocomplete="off">
+        <div id="lista-materiales" class="lista-sugerencias"></div>
+      </div>
+
+      <select id="unidad" style="width:120px;">
+        <option value="pieza">Pieza</option>
+        <option value="m2">m²</option>
+        <option value="hora">Hora</option>
+      </select>
+
+      <input type="number" id="cantidad" min="1" value="1" style="width:80px;" title="Cantidad">
+
+      <input type="number" id="ancho" step="0.01" min="0" placeholder="Ancho (m)" style="width:120px;">
+      <input type="number" id="alto" step="0.01" min="0" placeholder="Alto (m)" style="width:120px;">
+
+      <button id="btn-agregar" type="button">Agregar</button>
+    </div>
+
+    <!-- TABLA -->
+    <table class="tabla">
+      <thead>
+        <tr>
+          <th>Material</th>
+          <th>Unidad</th>
+          <th>Cantidad</th>
+          <th>Medida</th>
+          <th>Precio Unitario</th>
+          <th>Total</th>
+          <th>Opciones</th>
+        </tr>
+      </thead>
+      <tbody id="tabla-detalle"></tbody>
+    </table>
+
+    <!-- DESCRIPCION -->
+    <div class="descripcion-box">
+      <label for="descripcion-trabajo"><strong>Descripción / Nota del trabajo:</strong></label>
+      <textarea id="descripcion-trabajo" placeholder="Artículos, medidas, acabados, detalles, etc..."></textarea>
+    </div>
+
+    <!-- TOTALES + PAGO -->
+    <div class="card-totales">
+
+      <label for="iva-tipo"><strong>Tipo de IVA:</strong></label>
+      <select id="iva-tipo" style="width:220px;">
+        <option value="0.08" selected>Cliente local (8%)</option>
+        <option value="0.15">Cliente foráneo (15%)</option>
+      </select>
+
+      <br><br>
+
+      <label for="metodo-pago"><strong>Método de pago:</strong></label>
+      <select id="metodo-pago" style="width:220px;">
+        <option value="Efectivo">Efectivo</option>
+        <option value="Tarjeta">Tarjeta</option>
+        <option value="Transferencia">Transferencia</option>
+      </select>
+
+      <label for="anticipo"><strong>Anticipo:</strong></label>
+      <input type="number" id="anticipo" min="0" step="0.01" value="0" style="width:220px;">
+
+      <br><br>
+
+      <p>Subtotal: $<span id="subtotal-span">0.00</span></p>
+      <p>IVA (<span id="iva-porcentaje">8</span>%): $<span id="iva-span">0.00</span></p>
+      <p class="total-final">Total: $<span id="total-span">0.00</span></p>
+      <p><strong>Saldo pendiente:</strong> $<span id="saldo-span">0.00</span></p>
+
+      <label for="nota-extra"><strong>Notas extra (opcional):</strong></label>
+      <textarea id="nota-extra" placeholder="Notas adicionales para producción (opcional)..."></textarea>
+
+      <button id="btn-confirmar" class="btn-confirmar" type="button">
+        Confirmar Cotización
+      </button>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

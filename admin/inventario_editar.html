@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Inventario - NODOX</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <div class="sidebar">
+        <h2><img src="../img/nodox_logo.png" class="logo-sidebar"></h2>
+
+        <a href="./admin.html">Dashboard</a>
+        <a href="./cotizaciones.html">Cotizaciones</a>
+        <a href="./inventario.html" class="active">Inventario</a>
+        <a href="./servicios.html">Servicios</a>
+        <a href="./ordenes.html">Órdenes Trabajo</a>
+        <a href="./mensajes.html">Mensajes</a>
+        <a href="./usuarios.html">Usuarios</a>
+
+        <a href="../login/login.html" class="cerrar-sesion">⏻ Cerrar sesión</a>
+    </div>
+
+    <!-- MAIN -->
+    <div class="main">
+        <div class="header">
+            <h1>Editar material</h1>
+        </div>
+
+        <div class="card-form">
+            <label>Nombre:</label>
+            <input type="text" id="nombre">
+
+            <label>Descripción:</label>
+            <input type="text" id="descripcion">
+
+            <label>Unidad:</label>
+            <input type="text" id="unidad">
+
+            <label>Precio:</label>
+            <input type="number" id="precio">
+
+            <label>Cantidad:</label>
+            <input type="number" id="cantidad">
+
+            <button onclick="guardarCambios()" class="btn-confirmar">
+                Guardar Cambios
+            </button>
+        </div>
+
+    </div>
+
+</div>
+<script src="../config.js"></script>
+<script src="inventario_editar.js"></script>
+</body>
+</html>

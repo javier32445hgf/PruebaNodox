@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <title>Usuarios - NODOX</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+<div class="dashboard">
+
+ 
+    <div class="sidebar">
+        <h2>NODOX</h2>
+        <a href="admin.html">Menu Principal</a>
+        <a href="cotizaciones.html">Cotizaciones</a>
+        <a href="inventario.html">Inventario</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="ordenes.html">Órdenes Trabajo</a>
+        <a href="mensajes.html">Mensajes</a>
+        <a href="../login/login.html">Cerrar sesión</a>
+    </div>
+
+
+    <div class="main">
+        <div class="header header-flex">
+            <div>
+                <h1>Usuarios</h1>
+                <p>Gestiona las cuentas de acceso al sistema.</p>
+            </div>
+            <button id="btn-nuevo-usuario" class="btn-primario">
+                + Nuevo usuario
+            </button>
+        </div>
+
+        <div class="card-table">
+            <table class="tabla tabla-usuarios">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Usuario</th>
+                        <th>Rol</th>
+                        <th>Estado</th>
+                        <th style="text-align:center;">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody-usuarios"></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal" id="modal-usuario">
+    <div class="modal-contenido-2">
+        <h2 id="modal-titulo">Nuevo usuario</h2>
+
+        <label>Nombre completo</label>
+        <input type="text" id="inp-nombre-usu">
+
+        <label>Usuario</label>
+        <input type="text" id="inp-usuario-usu">
+
+        <label>Contraseña</label>
+        <div class="campo-password">
+            <input type="password" id="inp-pass-usu" placeholder="Dejar vacío para NO cambiar">
+            <span id="toggle-pass" class="icono-ojo">👁️</span>
+        </div>
+
+        <label>Rol</label>
+        <select id="inp-rol-usu">
+            <option value="Administrador">Administrador</option>
+            <option value="Empleado">Empleado</option>
+            <option value="Produccion">Producción</option>
+        </select>
+
+        <div class="modal-actions">
+            <button id="btn-guardar-usuario" class="btn-primario">Guardar</button>
+            <button id="btn-cerrar-modal-usuario" class="btn-secundario">Cancelar</button>
+        </div>
+    </div>
+</div>
+<script src="../config.js"></script>
+<script src="usuarios.js"></script>
+</body>
+</html>

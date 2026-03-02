@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Servicios - Producción</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <script src="../config.js"></script>
+    <script defer src="servicios.js"></script>
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <div class="sidebar">
+        <h2><img src="../img/nodox_logo.png" class="logo-sidebar"></h2>
+
+        <a href="./produccion.html">Dashboard</a>
+        <a href="./inventario.html">Inventario</a>
+        <a class="activo" href="./servicios.html">Servicios</a>
+        <a href="./ordenes.html">Órdenes Trabajo</a>
+        <a href="./mensajes.html">Mensajes</a>
+
+        <a href="../login/login.html" class="cerrar-sesion">⏻ Cerrar sesión</a>
+    </div>
+
+    <div class="main">
+        <div class="header">
+            <h1>Servicios (solo lectura)</h1>
+        </div>
+
+        <table class="tabla">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Servicio</th>
+                    <th>Descripción</th>
+                    <th>Precio Base</th>
+                </tr>
+            </thead>
+            <tbody id="tabla-servicios"></tbody>
+        </table>
+    </div>
+
+</div>
+
+</body>
+</html>

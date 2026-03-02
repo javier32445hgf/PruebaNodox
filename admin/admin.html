@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>NODOX - Panel Administrador</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+
+    <div class="sidebar">
+        <h2><img src="../img/nodox_logo.png" class="logo-sidebar"></h2>
+
+        <a href="./cotizaciones.html">Cotizaciones</a>
+        <a href="./inventario.html">Inventario</a>
+        <a href="./servicios.html">Servicios</a>
+        <a href="./ordenes.html">Órdenes Trabajo</a>
+        <a href="./mensajes.html">Mensajes</a>
+        <a href="./usuarios.html">Usuarios</a>
+
+        <a href="../login/login.html" class="cerrar-sesion">⏻ Cerrar sesión</a>
+    </div>
+
+
+    <div class="main">
+
+        <div class="header">
+            <h1>Panel del Administrador</h1>
+            <p>Bienvenido, administra el sistema eficientemente.</p>
+            <div id="reloj" class="reloj"></div>
+        </div>
+
+     
+        <div class="cards">
+
+            <a class="card" href="./cotizaciones.html">
+                <h3>📄 Cotizaciones</h3>
+                <p>Crear y administrar cotizaciones.</p>
+            </a>
+
+            <a class="card" href="./inventario.html">
+                <h3>📦 Inventario</h3>
+                <p>Materiales, existencias y precios.</p>
+            </a>
+
+            <a class="card" href="./servicios.html">
+                <h3>🛠 Servicios</h3>
+                <p>Gestiona tus servicios y rangos.</p>
+            </a>
+
+            <a class="card" href="./ordenes.html">
+                <h3>📑 Órdenes de Trabajo</h3>
+                <p>Seguimiento y control de producción.</p>
+            </a>
+
+            <a class="card" href="./usuarios.html">
+                <h3>👤 Usuarios</h3>
+                <p>Administración de empleados.</p>
+            </a>
+
+            <a class="card" href="./mensajes.html">
+                <h3>💬 Mensajes</h3>
+                <p>Notificaciones internas.</p>
+            </a>
+
+        </div>
+    </div>
+
+</div>
+<script src="../config.js"></script>
+<script src="./admin.js"></script>
+
+
+<div id="reloj-contenedor">
+    <div id="reloj-hora"></div>
+    <div id="reloj-fecha"></div>
+</div>
+
+</body>
+</html>

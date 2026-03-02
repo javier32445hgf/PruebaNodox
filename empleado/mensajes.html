@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <title>Mensajes - Empleado</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <script src="../config.js"></script>
+    <script defer src="mensajes.js"></script>
+</head>
+<body>
+<div class="dashboard">
+
+    <div class="sidebar">
+        <h2><img src="../img/nodox_logo.png" class="logo-sidebar"></h2>
+
+        <a href="./empleado.html">Dashboard</a>
+        <a href="./cotizaciones.html">Cotizaciones</a>
+        <a href="./inventario.html">Inventario</a>
+        <a href="./servicios.html">Servicios</a>
+        <a href="./ordenes.html">Órdenes Trabajo</a>
+        <a class="activo" href="./mensajes.html">Mensajes</a>
+
+        <a href="../login/login.html" class="cerrar-sesion">⏻ Cerrar sesión</a>
+    </div>
+
+    <div class="main">
+        <div class="header">
+            <h1>Mensajes</h1>
+            <p>Comunícate con tu equipo de trabajo.</p>
+        </div>
+
+        <div class="chat-layout">
+            <!-- LISTA DE CONVERSACIONES -->
+            <div class="chat-sidebar">
+                <h3>Conversaciones</h3>
+                <ul id="lista-usuarios-chat"></ul>
+            </div>
+
+            <!-- VENTANA DE CHAT -->
+            <div class="chat-main">
+                <div class="chat-main-header">
+                    <span id="chat-contra-nombre">Selecciona un usuario</span>
+                </div>
+
+                <div class="chat-mensajes" id="chat-mensajes">
+                    <!-- mensajes -->
+                </div>
+
+                <div class="chat-input">
+                    <textarea id="chat-texto" placeholder="Escribe un mensaje..."></textarea>
+                    <button id="btn-enviar-mensaje" class="btn-primario">Enviar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

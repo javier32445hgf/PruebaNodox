@@ -1,0 +1,978 @@
+/* =========================================================
+   PALETA CORPORATIVA NODOX
+   Negro: #111111
+   Blanco: #FFFFFF
+   Verde Chartreuse: #A8CF45
+========================================================= */
+.btn-actualizar{
+    margin-left: 12px;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+:root {
+    --negro: #111111;
+    --negro-suave: #1a1a1a;
+    --blanco: #ffffff;
+    --gris-claro: #f3f3f3;
+    --gris-texto: #a0a0a0;
+    --verde: #A8CF45;
+    --verde-oscuro: #8ab833;
+    --sombra: rgba(0,0,0,0.15);
+}
+
+/* =========================================================
+   ESTRUCTURA GENERAL
+========================================================= */
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: var(--gris-claro);
+    height: 100%;
+    color: var(--negro);
+}
+
+.dashboard {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* =========================================================
+   SIDEBAR MODERNO
+========================================================= */
+
+.sidebar {
+    width: 260px;
+    background-color: var(--negro);
+    color: var(--blanco);
+    display: flex;
+    flex-direction: column;
+    padding-top: 25px;
+    box-shadow: 4px 0 12px var(--sombra);
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 22px;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.sidebar a {
+    padding: 15px 25px;
+    color: var(--gris-texto);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    transition: 0.25s;
+}
+
+.sidebar a:hover,
+.sidebar a.active {
+    background-color: var(--negro-suave);
+    color: var(--verde);
+    padding-left: 32px;
+}
+
+/* =========================================================
+   CONTENIDO PRINCIPAL
+========================================================= */
+
+.main {
+    flex: 1;
+    padding: 32px;
+}
+
+/* HEADER */
+.header {
+    background: var(--blanco);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px var(--sombra);
+    margin-bottom: 25px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 26px;
+    color: var(--negro);
+}
+
+/* =========================================================
+   CARDS PREMIUM
+========================================================= */
+
+.cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    flex: 1;
+    min-width: 250px;
+    background: var(--blanco);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px var(--sombra);
+    text-align: center;
+    font-size: 18px;
+    transition: transform 0.25s, box-shadow 0.25s;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px var(--sombra);
+}
+
+.card h3 {
+    margin: 0;
+    font-size: 20px;
+    color: var(--negro);
+}
+
+/* =========================================================
+   TABLAS PREMIUM
+========================================================= */
+
+.tabla {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--blanco);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px var(--sombra);
+}
+
+.tabla th {
+    background: var(--negro);
+    color: var(--verde);
+    padding: 14px;
+    font-size: 15px;
+}
+
+.tabla td {
+    padding: 14px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+/* =========================================================
+   BOTONES PROFESIONALES
+========================================================= */
+
+.btn-crear {
+    background: var(--verde);
+    color: var(--negro);
+    padding: 12px 18px;
+    border-radius: 6px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.25s;
+    font-weight: bold;
+}
+
+.btn-crear:hover {
+    background: var(--verde-oscuro);
+}
+
+/* Botones de acción */
+.btn-accion {
+    padding: 8px 14px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.btn-edit {
+    background: #1971c2;
+    color: var(--blanco);
+}
+.btn-edit:hover {
+    background: #0f599a;
+}
+
+.btn-delete {
+    background: #d62828;
+    color: var(--blanco);
+}
+.btn-delete:hover {
+    background: #a61e1e;
+}
+
+/* =========================================================
+   BUSCADOR
+========================================================= */
+
+.input-buscar {
+    width: 100%;
+    max-width: 350px;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    transition: 0.25s;
+}
+
+.input-buscar:focus {
+    border-color: var(--verde);
+    box-shadow: 0 0 6px rgba(168, 207, 69, 0.6);
+}
+
+/* =========================================================
+   AUTOCOMPLETE
+========================================================= */
+
+.lista-sugerencias {
+    position: absolute;
+    background: var(--blanco);
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 100;
+    box-shadow: 0 4px 8px var(--sombra);
+}
+
+.sugerencia-item {
+    padding: 10px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.sugerencia-item:hover {
+    background: var(--gris-claro);
+}
+
+/* =========================================================
+   RESUMEN COTIZACIÓN
+========================================================= */
+
+.resumen-cotizacion p {
+    margin: 6px 0;
+    font-size: 16px;
+}
+
+.logo-sidebar {
+    width: 130px;
+    display: block;
+    margin: 0 auto 15px auto;
+}
+
+.sidebar .cerrar-sesion {
+    margin-top: auto;
+    background-color: transparent;
+    color: #ff6b6b !important;
+}
+.sidebar .cerrar-sesion:hover {
+    padding-left: 32px;
+    color: #ff8787 !important;
+}
+
+/* ==================== PALETA NODOX ==================== */
+:root {
+    --nodox-negro: #111216;
+    --nodox-negro-soft: #181a20;
+    --nodox-blanco: #ffffff;
+    --nodox-chartreuse: #a8cf45;
+    --nodox-chartreuse-dark: #8ab232;
+    --nodox-gris-claro: #f5f6f9;
+    --nodox-gris-texto: #6b7280;
+}
+
+/* Ajuste de fondo general del main */
+.main {
+    background: var(--nodox-gris-claro);
+}
+
+/* Header con un poquito de “tarjeta cara” */
+.header {
+    background: var(--nodox-blanco);
+    padding: 20px 24px;
+    border-radius: 12px;
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+    margin-bottom: 24px;
+}
+
+/* Header con botón a la derecha */
+.header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Sidebar más oscuro y elegante */
+.sidebar {
+    background: var(--nodox-negro);
+}
+
+/* Botón primario con verde chartreuse */
+.btn-primario {
+    background: var(--nodox-chartreuse);
+    color: #111;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 999px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(168, 207, 69, 0.35);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.btn-primario:hover {
+    background: var(--nodox-chartreuse-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 16px 35px rgba(168, 207, 69, 0.4);
+}
+
+.btn-secundario {
+    background: #e5e7eb;
+    color: #111827;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 999px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* Tarjeta tabla */
+.card-table {
+    background: var(--nodox-blanco);
+    border-radius: 14px;
+    padding: 16px 18px;
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
+}
+
+/* Tabla más limpia */
+.tabla-usuarios th,
+.tabla-usuarios td {
+    font-size: 14px;
+}
+
+/* Tag roles / estados */
+.tag-rol,
+.tag-estado {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+}
+
+.rol-administrador {
+    background: rgba(168, 207, 69, 0.15);
+    color: #3f6212;
+}
+.rol-empleado {
+    background: rgba(59, 130, 246, 0.15);
+    color: #1d4ed8;
+}
+.rol-produccion {
+    background: rgba(249, 115, 22, 0.15);
+    color: #ea580c;
+}
+
+.estado-activo {
+    background: rgba(34, 197, 94, 0.14);
+    color: #15803d;
+}
+.estado-bloqueado {
+    background: rgba(239, 68, 68, 0.12);
+    color: #b91c1c;
+}
+
+/* Botones mini en tabla usuarios */
+.acciones-usuarios {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+}
+
+.btn-mini {
+    border: none;
+    border-radius: 999px;
+    font-size: 12px;
+    padding: 6px 12px;
+    cursor: pointer;
+    background: #e5e7eb;
+}
+
+.btn-mini:hover {
+    background: #d1d5db;
+}
+
+.btn-mini.btn-danger {
+    background: #f97373;
+    color: white;
+}
+
+.btn-mini.btn-danger:hover {
+    background: #ef4444;
+}
+
+/* Modal genérico reutilizado pero mejorado */
+/* ===============================
+   MODAL GLOBAL MEJORADO
+=============================== */
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-content {
+    background: #ffffff;
+    width: 550px;
+    max-height: 85vh;
+    overflow-y: auto;
+    border-radius: 12px;
+    padding: 25px 30px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+    animation: modalFade 0.25s ease-out;
+}
+
+@keyframes modalFade {
+    from { opacity: 0; transform: scale(0.95); }
+    to   { opacity: 1; transform: scale(1); }
+}
+
+.modal-content h2 {
+    margin-bottom: 10px;
+    color: #111827;
+    font-size: 22px;
+}
+
+.modal-content p {
+    margin: 6px 0;
+    font-size: 15px;
+    color: #333;
+}
+
+.modal-content hr {
+    margin: 15px 0;
+    border: none;
+    height: 1px;
+    background: #e5e7eb;
+}
+
+#estado-select {
+    padding: 8px 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+}
+
+#btn-guardar-estado {
+    padding: 8px 12px;
+    background: #2563eb;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#btn-guardar-estado:hover {
+    background: #1d4ed8;
+}
+
+.modal-content button:last-child {
+    padding: 8px 12px;
+    margin-left: 10px;
+    background: #ef4444;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.modal-content button:last-child:hover {
+    background: #dc2626;
+}
+
+
+.modal-contenido-2 {
+    background: var(--nodox-blanco);
+    padding: 22px 24px;
+    border-radius: 16px;
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.35);
+    width: 360px;
+}
+
+.modal-contenido-2 h2 {
+    margin-top: 0;
+    margin-bottom: 14px;
+}
+
+.modal-contenido-2 label {
+    display: block;
+    font-size: 13px;
+    margin-bottom: 4px;
+    color: #4b5563;
+}
+
+.modal-contenido-2 input,
+.modal-contenido-2 select {
+    width: 100%;
+    padding: 9px 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    font-size: 14px;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+/* ==================== CHAT (MENSAJES) ==================== */
+
+.chat-layout {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 18px;
+    height: calc(100vh - 160px);
+}
+
+.chat-sidebar {
+    background: var(--nodox-blanco);
+    border-radius: 14px;
+    padding: 14px 16px;
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
+    overflow-y: auto;
+}
+
+.chat-sidebar h3 {
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+
+#lista-usuarios-chat {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.item-usuario-chat {
+    padding: 9px 10px;
+    border-radius: 999px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-bottom: 6px;
+    color: #111827;
+}
+
+.item-usuario-chat:hover {
+    background: #f3f4f6;
+}
+
+.item-usuario-chat.activo {
+    background: rgba(168, 207, 69, 0.18);
+    color: #3f6212;
+}
+
+/* Ventana chat */
+.chat-main {
+    background: var(--nodox-blanco);
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
+    height: 100%;
+}
+
+.chat-main-header {
+    padding: 12px 16px;
+    border-bottom: 1px solid #e5e7eb;
+    font-weight: 600;
+}
+
+.chat-mensajes {
+    flex: 1;
+    padding: 14px 16px;
+    overflow-y: auto;
+    background: #f9fafb;
+}
+
+.mensaje-burbuja {
+    max-width: 70%;
+    padding: 8px 11px;
+    border-radius: 14px;
+    margin-bottom: 8px;
+    font-size: 14px;
+    display: inline-block;
+    position: relative;
+}
+
+.mensaje-burbuja .hora {
+    font-size: 11px;
+    color: #9ca3af;
+    margin-top: 2px;
+    text-align: right;
+}
+
+.mensaje-burbuja.mio {
+    background: var(--nodox-chartreuse);
+    color: #111827;
+    margin-left: auto;
+    border-bottom-right-radius: 4px;
+    display: block;
+}
+
+.mensaje-burbuja.otro {
+    background: #e5e7eb;
+    color: #111827;
+    margin-right: auto;
+    border-bottom-left-radius: 4px;
+    display: block;
+}
+
+.chat-input {
+    padding: 10px 12px;
+    border-top: 1px solid #e5e7eb;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.chat-input textarea {
+    flex: 1;
+    resize: none;
+    border-radius: 10px;
+    border: 1px solid #d1d5db;
+    padding: 8px 10px;
+    font-size: 14px;
+    max-height: 96px;
+}
+
+.campo-password {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.campo-password input {
+    width: 100%;
+    padding-right: 40px; /* asegura que el icono no tape el texto */
+    box-sizing: border-box;
+}
+
+
+.icono-ojo {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 18px;
+    color: #6b7280;
+    user-select: none;
+    z-index: 20; /* evita que se esconda */
+}
+
+
+.icono-ojo:hover {
+    color: #374151;
+}
+
+/* ======== BUSCADOR DE COTIZACIÓN ======== */
+.cotizador-buscador {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.cotizador-buscador input {
+    padding: 10px;
+    width: 250px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.cotizador-buscador button {
+    background: #a6cf37;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.cotizador-buscador button:hover {
+    background: #8ab12f;
+}
+
+/* ======== TARJETA DE TOTALES ======== */
+.card-totales {
+    margin-top: 20px;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    width: 300px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.card-totales p {
+    font-size: 16px;
+    margin: 6px 0;
+}
+
+.card-totales .total-final {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--nodox-chartreuse-dark);
+}
+
+/* ======== BOTÓN CONFIRMAR ======== */
+.btn-confirmar {
+    margin-top: 15px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    border: none;
+    background: var(--nodox-chartreuse);
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-confirmar:hover {
+    background: var(--nodox-chartreuse-dark);
+    transform: scale(1.03);
+}
+
+/* Caja de descripción para cotización */
+.descripcion-box {
+    margin-top: 18px;
+    background: var(--nodox-blanco);
+    padding: 14px 16px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.12);
+}
+
+.descripcion-box label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #374151;
+}
+
+.descripcion-box textarea {
+    width: 100%;
+    margin-top: 6px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #d1d5db;
+    font-size: 14px;
+    resize: vertical;
+    min-height: 70px;
+}
+
+/* ============================
+   Corrige estilo de tarjetas (links)
+============================ */
+
+/* Elimina estilo azul en links dentro de tarjetas */
+.card {
+    color: inherit;               /* Usa el mismo color del texto del contenedor */
+    text-decoration: none;        /* Quita subrayado */
+    display: block;               /* Hace toda la tarjeta clickeable */
+}
+
+/* Asegura que los textos dentro de la tarjeta tampoco sean azules */
+.card h3,
+.card p {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Opcional: efecto hover para mejor UX */
+.card:hover {
+    transform: translateY(-3px);
+    transition: 0.2s ease-in-out;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+    cursor: pointer;
+}
+
+/* ===== Reloj del panel ===== */
+.reloj {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #444;
+    background: #ffffffb6;
+    padding: 5px 12px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+/* ===============================
+   Reloj fijo abajo a la derecha
+=================================*/
+#reloj-contenedor {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #ffffffd5;
+    padding: 10px 15px;
+    border-radius: 10px;
+    text-align: right;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.25);
+    backdrop-filter: blur(4px);
+    z-index: 999;
+}
+
+#reloj-hora {
+    font-size: 20px;
+    font-weight: bold;
+    color: #222;
+}
+
+#reloj-fecha {
+    font-size: 14px;
+    color: #555;
+}
+
+#notif-mensajes {
+    color: #ff4444;
+    margin-left: 8px;
+}
+
+.notif-hidden {
+    display: none;
+}
+
+.online-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 6px;
+}
+
+.online { background: #22c55e; }
+.offline { background: #9ca3af; }
+
+.badge {
+    background: #ff3b3b;
+    color: white;
+    padding: 2px 6px;
+    font-size: 11px;
+    border-radius: 8px;
+    float: right;
+}
+
+/***************************
+/* Fondo modal */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.modal.show { display: flex; }
+
+/* Caja del modal (mejor tamaño) */
+.modal-contenido-2{
+  width: min(900px, 92vw);
+  max-height: min(85vh, 780px);
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden; /* importante para header/footer sticky */
+  box-shadow: 0 18px 60px rgba(0,0,0,0.35);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header fijo */
+.modal-contenido-2 h2{
+  margin: 0;
+  padding: 14px 18px;
+  border-bottom: 1px solid #e9e9e9;
+  background: #fafafa;
+}
+
+/* Cuerpo con scroll */
+#detalle-contenido{
+  padding: 16px 18px;
+  overflow: auto;
+}
+
+/* Footer con botones siempre visibles */
+.modal-actions{
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  padding: 12px 18px;
+  border-top: 1px solid #e9e9e9;
+  background: #fafafa;
+  position: sticky;
+  bottom: 0;
+}
+
+/* Botones */
+.modal-actions button{
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.modal-actions button:first-child{
+  background: #A8CF45;
+  color: #1B1B1B;
+  font-weight: 600;
+}
+
+.modal-actions button:last-child{
+  background: #444;
+  color: #fff;
+}
+
+/* Opcional: estilos para bloques de datos */
+.ot-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 18px;
+  margin-top: 10px;
+}
+
+.ot-grid p{
+  margin: 0;
+}
+
+.ot-sep{
+  border-top: 1px solid #e9e9e9;
+  margin: 12px 0;
+}
+@media (max-width: 700px){
+  .ot-grid{ grid-template-columns: 1fr; }
+}

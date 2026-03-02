@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NODOX - Iniciar Sesión</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+
+<!-- ✅ TITLEBAR TIPO WINDOWS (Electron frameless) -->
+<div class="titlebar">
+    <div class="titlebar-left">
+        <span class="app-title">NODOX</span>
+    </div>
+
+    <div class="titlebar-controls">
+        <button class="win-btn win-min" title="Minimizar" aria-label="Minimizar">—</button>
+        <button class="win-btn win-max" title="Maximizar" aria-label="Maximizar">□</button>
+        <button class="win-btn win-close" title="Cerrar" aria-label="Cerrar">✕</button>
+    </div>
+</div>
+
+<div class="login-bg">
+
+    <div class="login-card fade-in">
+
+        <img src="../img/nodox_logo.png" class="logo" alt="NODOX Logo">
+
+        <h2>Bienvenido</h2>
+        <p class="sub-text">Accede al panel administrativo</p>
+
+        <input type="text" id="usuario" placeholder="Usuario">
+        <input type="password" id="contrasena" placeholder="Contraseña">
+
+        <button id="btn-login" onclick="login()">Ingresar</button>
+
+        <p id="error" class="error"></p>
+
+        <button class="btn-salir" onclick="mostrarConfirmacionSalida()">Salir</button>
+
+    </div>
+
+</div>
+
+<div id="modal-salida" class="modal-salida oculto">
+    <div class="modal-contenido">
+        <h3>¿Deseas salir?</h3>
+
+        <label class="checkbox">
+            <input type="checkbox" id="no-mostrar-salida">
+            No volver a mostrar
+        </label>
+
+        <div class="modal-botones">
+            <button id="confirmar-salida">Sí, salir</button>
+            <button id="cancelar-salida">Cancelar</button>
+        </div>
+    </div>
+</div>
+
+<script src="../config.js"></script>
+<script defer src="login.js"></script>
+
+<!-- ✅ Conecta botones de la titlebar -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelector(".win-min")?.addEventListener("click", () => window.windowControls.minimize());
+    document.querySelector(".win-max")?.addEventListener("click", () => window.windowControls.maximize());
+    document.querySelector(".win-close")?.addEventListener("click", () => window.windowControls.close());
+});
+</script>
+
+</body>
+</html>

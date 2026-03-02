@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Servicio - NODOX</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <script src="../config.js"></script>
+    <script defer src="editar_servicio.js"></script>
+</head>
+<body>
+
+<div class="dashboard">
+
+    <div class="sidebar">
+        <h2>NODOX</h2>
+        <a href="admin.html">Dashboard</a>
+        <a href="pedidos.html">Pedidos</a>
+        <a href="inventario.html">Inventario</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="../login/login.html">Cerrar sesión</a>
+    </div>
+
+    <div class="main">
+        <div class="header">
+            <h1>Editar Servicio</h1>
+        </div>
+
+        <div class="form-card">
+
+            <label>Nombre del servicio:</label>
+            <input type="text" id="nombre">
+
+            <label>Descripción:</label>
+            <textarea id="descripcion"></textarea>
+
+            <label>Unidad:</label>
+            <input type="text" id="unidad">
+
+            <label>Precio base (opcional):</label>
+            <input type="number" id="precio_base" step="0.01">
+
+            <button class="btn-guardar" onclick="guardarCambios()">Guardar</button>
+            <button class="btn-cancelar" onclick="volver()">Cancelar</button>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

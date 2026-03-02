@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <title>Mensajes - NODOX</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+<div class="dashboard">
+
+ 
+    <div class="sidebar">
+        <h2>NODOX</h2>
+        <a href="admin.html">Menu Principal</a>
+        <a href="cotizaciones.html">Cotizaciones</a>
+        <a href="inventario.html">Inventario</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="ordenes.html">Órdenes Trabajo</a>
+        <a href="mensajes.html">
+            Mensajes <span id="notif-mensajes" class="notif-hidden">●</span>
+        </a>
+        <a href="usuarios.html">Usuarios</a>
+        <a href="../login/login.html">Cerrar sesión</a>
+    </div>
+
+  
+    <div class="main">
+        <div class="header">
+            <h1>Mensajes</h1>
+            <p>Comunícate con tu equipo de trabajo.</p>
+        </div>
+
+        <div class="chat-layout">
+           
+            <div class="chat-sidebar">
+                <h3>Conversaciones</h3>
+                <ul id="lista-usuarios-chat"></ul>
+            </div>
+
+           
+            <div class="chat-main">
+                <div class="chat-main-header">
+                    <span id="chat-contra-nombre">Selecciona un usuario</span>
+                </div>
+
+                <div class="chat-mensajes" id="chat-mensajes">
+                 
+                </div>
+
+                <div class="chat-input">
+                    <textarea id="chat-texto" placeholder="Escribe un mensaje..."></textarea>
+                    <button id="btn-enviar-mensaje" class="btn-primario">Enviar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../config.js"></script>
+<script src="mensajes.js"></script>
+</body>
+</html>

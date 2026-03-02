@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Órdenes de Trabajo - NODOX</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <script src="../config.js"></script>
+    <script defer src="ordenes.js"></script>
+</head>
+<body>
+
+<div class="dashboard">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <h2>NODOX</h2>
+        <a href="empleado.html">Menu Principal</a>
+        <a href="cotizaciones.html">Cotizaciones</a>
+        <a href="inventario.html">Inventario</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="mensajes.html">Mensajes</a>
+        <a href="../login/login.html">Cerrar sesión</a>
+    </div>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <div class="main">
+
+        <div class="header">
+            <h1>Órdenes de Trabajo</h1>
+        </div>
+
+        <!-- TABLA -->
+        <table class="tabla">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Estado</th>
+                    <th>Fecha</th>
+                    <th>Descripción</th>
+                    <th>Opciones</th>
+                </tr>
+            </thead>
+
+            <tbody id="tabla-ordenes"></tbody>
+        </table>
+
+    </div>
+</div>
+
+<!-- MODAL -->
+<div id="modal-detalle" class="modal">
+    <div class="modal-contenido-2">
+        <h2>Detalle de Orden</h2>
+
+        <div id="detalle-contenido"></div>
+
+        <div class="modal-actions">
+            <button onclick="cerrarModal()">Cerrar</button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
